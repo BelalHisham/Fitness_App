@@ -32,7 +32,7 @@ const HorizontalScrollbar = ({data, bodyPart, setBodyPart}) => {
         {data.map((item) => (
         <Box
         key={item.id || item}
-        itemId={item.id || item}
+        itemID={item.id || item} // I have changed this from itemId to itmeID as it was showing an error in the console
         title={item.id || item}
         m= '0 40px'
         >

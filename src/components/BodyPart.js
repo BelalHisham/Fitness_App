@@ -8,7 +8,7 @@ const BodyPart = ({item, setBodyPart, bodyPart}) => {
    type="button"
    alignItems="center"
    justifyItems="center"
-   calssName="bodyPart-card"
+   className="bodyPart-card"
 
    sx={{
     borderTop: bodyPart === item ? '4px solid #FF2625' : '',
