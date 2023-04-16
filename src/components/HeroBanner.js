@@ -24,7 +24,7 @@ const HeroBanner = () => {
         Change your life
     </Typography>
 
-    <Button variant='contained' color='error' href='#exercises' sx={{ backgroundColor: "#FF2625", padding: '10px'}}>
+    <Button variant='contained' color='error' href='#login' sx={{ backgroundColor: "#FF2625", padding: '10px'}}>
       Get started now
     </Button>
 

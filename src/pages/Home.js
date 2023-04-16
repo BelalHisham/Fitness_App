@@ -7,12 +7,15 @@ import Exercises from '../components/Exercises';
 
 
 const Home = () => {
+  // adding this here because it will affect the whole application not the search only
+  const [bodyPart, setBodyPart] = useState(['all']);
+  const [exercise, setExercises] = useState([]);
   return (
     <Box>
 
     <HeroBanner />
-    <SearchExercises />
-    <Exercises />
+    <SearchExercises setExercises={setExercises} bodyPart={bodyPart}  setBodyPart = {setBodyPart} />
+    <Exercises  setExercises={setExercises} bodyPart={bodyPart}  setBodyPart = {setBodyPart} />
 
     </Box>
   )
