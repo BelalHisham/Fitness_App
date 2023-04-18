@@ -9,29 +9,32 @@ import ExerciseCard from './ExerciseCard';
 
 const Exercises = ({exercises, setExercises, bodyPart}) => {
 
+
+
   const [currentPage, setCurrentPage] = useState(1);
   const exercisesPerPage = 9;
 
-  // useEffect(() => {
-  //   const fetchExercisesData = async () => {
-  //     let exercisesData = [];
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exercisesData = [];
 
-  //     if (bodyPart === 'all') {
-  //       exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
-  //     } else {
-  //       exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
-  //     }
+      if (bodyPart === 'all') {
+        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      } else {
+        exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
+      }
 
-  //     setExercises(exercisesData);
+      setExercises(exercisesData);
       
-  //   };
+    };
 
-  //   fetchExercisesData();
-  // }, [bodyPart]);
-
-
+    fetchExercisesData();
+  }, [bodyPart]);
 
 
+
+  // Fixing the error (slice is not a function), as we need to wait for the exercises array.
+  if(!exercises.length) return 'Loading...'
 
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
