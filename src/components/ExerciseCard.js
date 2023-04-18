@@ -4,7 +4,7 @@ import { Button, Pagination, Stack, Typography } from '@mui/material';
 
 
 const ExerciseCard = ({exercise}) => {
-    console.log(exercise.name)
+
   return (
     
     <Link className="exercise-card" to={`/exercise/${exercise.id}`}>

@@ -2,6 +2,9 @@ import React,{ useContext } from 'react'
 import { Box, Typography  } from '@mui/material';
 import BodyPart from './BodyPart';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import ExerciseCard from './ExerciseCard';
+
+
 
 import RightArrowIcon from '../assets/icons/right-arrow.png';
 import LeftArrowIcon from '../assets/icons/left-arrow.png';
@@ -26,18 +29,19 @@ const LeftArrow = () => {
     );
   };
 
-const HorizontalScrollbar = ({data, bodyPart, setBodyPart}) => {
+const HorizontalScrollbar = ({data, bodyPart, setBodyPart, isBodyPart}) => {
   return (
     <ScrollMenu LeftArrow = {LeftArrow} RightArrow = {RightArrow}>
         {data.map((item) => (
         <Box
         key={item.id || item}
-        itemID={item.id || item} // I have changed this from itemId to itmeID as it was showing an error in the console
+        itemId={item.id || item} // I have changed this from itemId to itmeID as it was showing an error in the console however it dose not work when I use itmeID
         title={item.id || item}
         m= '0 40px'
         >
 
-        <BodyPart item={item} bodyPart = {bodyPart} setBodyPart = {setBodyPart} />
+        {isBodyPart ? <BodyPart item={item} bodyPart = {bodyPart} setBodyPart = {setBodyPart} />
+        : <ExerciseCard exercise={item} />}
 
         </Box>
         )

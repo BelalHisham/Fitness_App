@@ -3,7 +3,7 @@ import {Box, Stack, Typography} from '@mui/material';
 
 const ExerciseVideos = ({ exerciseVideos, name}) => {
 
-  if(!exerciseVideos.length) return 'Loading...'
+  if(!exerciseVideos.length) return <h1>Loading...</h1>
 
 
   return (
@@ -20,7 +20,7 @@ const ExerciseVideos = ({ exerciseVideos, name}) => {
     }}
     >
 
-    {exerciseVideos?.slice(0,3).map((item, index) => (
+    {exerciseVideos?.slice(0,6).map((item, index) => (
       <a 
       key='index'
       className = 'exercise-video'
@@ -30,7 +30,14 @@ const ExerciseVideos = ({ exerciseVideos, name}) => {
       >
 
       <img src = {item.video.thumbnails[0].url} alt = {item.video.title} />
-
+      <Box>
+        <Typography variant='h5' color= '#000'>
+          {item.video.title}
+        </Typography>
+        <Typography variant='h6' color= '#000'>
+          - {item.video.channelName}
+        </Typography>
+      </Box>
       </a>
     ))}
  
