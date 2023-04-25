@@ -1,6 +1,8 @@
 import React from 'react'
 import {Box} from '@mui/material';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
+import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
+
 
 
 
@@ -26,7 +28,7 @@ const WorkoutDetails = ({workout}) => {
       <p> <strong >Load (kg):</strong>  {workout.load} </p>
       <p> <strong> Reps: </strong>  {workout.reps} </p>
       <p> {workout.createdAt} </p>
-      <span onClick={handleClick}>Delete</span>
+      <span style={{color: 'red', backgroundColor: 'transparent'}} onClick={handleClick}> <DeleteForeverRoundedIcon /> </span>
     </Box>
     
   )
