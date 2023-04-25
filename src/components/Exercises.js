@@ -34,7 +34,7 @@ const Exercises = ({exercises, setExercises, bodyPart}) => {
 
 
   // Fixing the error (slice is not a function), as we need to wait for the exercises array.
-  if(!exercises.length) return 'Loading...'
+  if(!exercises.length) return <Typography variant='h5' sx = {{display: 'flex', alignItems: 'center', flexDirection: 'column', fontWeight: 'bold', fontStyle: 'italic'}}>Loading...</Typography>
 
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
