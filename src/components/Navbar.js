@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { height, Stack } from '@mui/system';
+import {  Stack } from '@mui/system';
 
 import LogoRat from '../assets/images/LogoRat.png'
 

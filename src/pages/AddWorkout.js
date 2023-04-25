@@ -1,7 +1,8 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import { useEffect, useState } from 'react' 
 import WorkoutDetails from '../components/WorkoutDetails'
+import WorkoutForm from '../components/WorkoutForm'
 
 
 const AddWorkout = () => {
@@ -25,13 +26,14 @@ const AddWorkout = () => {
 
     }, []) // when the array is empty it will only run once
   return (
-    <Box sx={{
-        height: '100vh'
-    }} >
+    <Box className = 'home' >
+    <Box className = 'workouts'>
     {workouts && workouts.map( (workout) => (
-        <Typography key={workout._id}> {workout.title} </Typography>
+       <WorkoutDetails key={workout._id} workout = {workout} />
 
-    ))}  
+    ))}
+    </Box>
+    <WorkoutForm />
     </Box>
   )
 }

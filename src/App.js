@@ -6,8 +6,9 @@ import ExerciseDetail from './pages/ExerciseDetail';
 import Home from './pages/Home';
 import AddWorkout from './pages/AddWorkout';
 import Footer from './components/Footer';
-
 import "./App.css";
+
+
 const App = () => {
   return (
     <Box width = "400px" sx={{width: {xl: '1488px'}}} m = "auto">

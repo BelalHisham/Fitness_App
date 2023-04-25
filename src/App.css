@@ -1,3 +1,10 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+:root {
+  --primary: #FF2625 ;
+  --error: #e7195a;
+}
+
 body {
     font-family: 'Josefin Sans';
     background-color: #FFFAFB;
@@ -24,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FF2625;
+    color: var(--primary);
     font-size: 25px;
     border-radius: 4px;
     position: absolute;
@@ -68,7 +75,7 @@ body {
     width: 400px;
     height: 445px;
     background: #fff;
-    border-top: 4px solid #FF2625;
+    border-top: 4px solid var(--primary);
     border-bottom-left-radius: 20px;
     text-decoration: none;
     display: flex;
@@ -94,8 +101,8 @@ body {
   }
   
   .search-btn:hover {
-    color: #FF2625 !important;
-    border: 1px solid #FF2625 !important;
+    color: var(--primary) !important;
+    border: 1px solid var(--primary) !important;
   }
   
   .exercise-video {
@@ -143,4 +150,71 @@ body {
       width: 280px;
     }
   }
+
+  /* Add workouts */
+ 
+  .home {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 100px;
+  }
+  .workout-details {
+    background: #fff;
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 20px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  }
+  .workout-details h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: var(--primary);
+  }
+  .workout-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+  .workout-details span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: #f1f1f1;
+    padding: 6px;
+    border-radius: 50%;
+    color: #333;
+  }
+
+  /* new workout form */
+label, input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
   
