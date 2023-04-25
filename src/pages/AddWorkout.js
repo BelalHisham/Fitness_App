@@ -27,7 +27,7 @@ const AddWorkout = () => {
 
         fetchWorkouts();
 
-    }, []) // when the array is empty it will only run once
+    }, [dispatch]) // when the array is empty it will only run once
   return (
     <Box className = 'home' >
     <Box className = 'workouts'>

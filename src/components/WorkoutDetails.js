@@ -2,7 +2,8 @@ import React from 'react'
 import {Box} from '@mui/material';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
 import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
-
+// date fns
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 
 
@@ -27,7 +28,7 @@ const WorkoutDetails = ({workout}) => {
 
       <p> <strong >Load (kg):</strong>  {workout.load} </p>
       <p> <strong> Reps: </strong>  {workout.reps} </p>
-      <p> {workout.createdAt} </p>
+      <p> {formatDistanceToNow(new Date(workout.createdAt) , {addSuffix: true})} </p>
       <span style={{color: 'red', backgroundColor: 'transparent'}} onClick={handleClick}> <DeleteForeverRoundedIcon /> </span>
     </Box>
     
