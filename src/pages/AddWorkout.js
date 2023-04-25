@@ -3,10 +3,12 @@ import { Box } from '@mui/material'
 import { useEffect, useState } from 'react' 
 import WorkoutDetails from '../components/WorkoutDetails'
 import WorkoutForm from '../components/WorkoutForm'
+import {useWorkoutsContext} from '../hooks/useWorkoutsContext' 
 
 
 const AddWorkout = () => {
-    const [workouts, setworkouts] = useState(null)
+  const {workouts, dispatch} = useWorkoutsContext()
+    // const [workouts, setworkouts] = useState(null)
     useEffect( () => {
 
         const fetchWorkouts = async () => {
@@ -17,7 +19,8 @@ const AddWorkout = () => {
             const json = await response.json();
 
             if(response.ok){
-                setworkouts(json)
+                // setworkouts(json) 
+                dispatch({type: 'SET_WORKOUTS', payload: json})
             }
 
         }
