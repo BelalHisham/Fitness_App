@@ -74,7 +74,6 @@ const Exercises = ({exercises, setExercises, bodyPart}) => {
 
     {exercises.length > 9 && (
 
-      // For the pages (9 exercises per page) you can check @mui/material doc
     <Pagination 
     color='standard'
     shape='rounded'

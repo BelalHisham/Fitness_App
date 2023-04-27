@@ -17,25 +17,26 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
     setBodyParts(['all', ...bodyPartData]);
 
 
-    }
+    } 
 
     fetchExercisesData();
 
   }, [])
 
-  //async function needs to take some time (Pull some date from the API)
   const handleSearch = async () => {
 
     if(search){
       const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
 
       const searchedExercises = exercisesData.filter(
+        // you can search by exercise name, target muscle, equipments or body part
         (exercise) => exercise.name.toLowerCase().includes(search)
         || exercise.target.toLowerCase().includes(search)
         || exercise.equipment.toLowerCase().includes(search)
         || exercise.bodyPart.toLowerCase().includes(search)
       );
 
+      // empty the search input
       setSearch('');
       setExercises(searchedExercises);
     }

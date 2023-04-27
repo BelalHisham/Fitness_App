@@ -7,10 +7,7 @@ import Detail from '../components/Detail';
 import ExerciseVideos from '../components/ExerciseVideos';
 import SimilarExercises from '../components/SimilarExercises';
 
-
-
 const ExerciseDetail = () => {
-
   
 const [exerciseDetail, setExerciseDetail] = useState({ });
 const [exerciseVideos, setexerciseVideos] = useState([ ])
@@ -37,9 +34,6 @@ useEffect(() => {
 
     const equipmentExerciseData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, exerciseOptions);
     setEquipmentExercises(equipmentExerciseData);
-
-
-
 
   }
   fetchExercisesData();
