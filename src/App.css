@@ -63,10 +63,10 @@ body {
   
   .hero-banner-img {
     position: absolute;
-    right: 40px;
-    top: 0px;
+    right: 0px;
+    top: 180px;
     width: 700px;
-    height: 900px;
+    height: 800px;
     margin-top: -330px;
   
   }
@@ -223,7 +223,7 @@ input.error{
 
 form.signup, form.login {
   max-width: 400px;
-  margin: 40px auto;
+  margin: 150px auto;
   padding: 20px;
   background: #fff;
   border-radius: 4px;
