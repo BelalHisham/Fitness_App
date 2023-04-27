@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import AddWorkout from './pages/AddWorkout';
 import Footer from './components/Footer';
 import "./App.css";
+import Login from './pages/Login';
+import Signup from './pages/Signup'
 
 
 const App = () => {
@@ -18,6 +20,8 @@ const App = () => {
             <Route path= "/" element = {<Home/>} />
             <Route path= "/exercise/:id" element = {<ExerciseDetail/>} />
             <Route path= "/add_workout" element = {<AddWorkout />} />
+            <Route path= "/login" element = {<Login />} />
+            <Route path= "/signup" element = {<Signup />} />
        
         </Routes>
         

@@ -21,8 +21,9 @@ const Navbar = () => {
       >
         <Link to = "/" style={{textDecoration: "none", color: "#3A1212", borderBottom: "3px solid #FF2625"}}>Home</Link>
         <a href='#exercises' style={{textDecoration: "none", color: "#3A1212"}}>Exercises</a>
-        <a href='#login' style={{textDecoration: "none", color: "#3A1212"}}>Login</a>
-        <a href='#login' style={{textDecoration: "none", color: "#3A1212"}}>Sign Up</a>
+
+        <Link to= '/login' >Login</Link>
+        <Link to= '/signup' >Sign up</Link>
       </Stack>
     </Stack>
   )
