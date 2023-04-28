@@ -5,6 +5,7 @@ import {useLogout} from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext';
 
 import LogoRat from '../assets/images/LogoRat.png'
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 const Navbar = () => {
 
@@ -15,10 +16,10 @@ const Navbar = () => {
     logout()
   }
   return (
-    <Stack direction= "row" justifyContent = "space-around" sx={{gap: {sm: "122px", xs: "40px"}, 
-    mt: {sm: "32px", xs: "20px"}, justifyContent : "none"}} px = "20px" >
+    <Stack direction= "row" justifyContent = "space-around"  sx={{gap: {sm: "122px", xs: "40px"}, 
+    mt: {sm: "32px", xs: "20px"}, justifyContent : "none"}} px = "20px"  >
       <Link to= "/">
-        <img src= {LogoRat} alt = "Logo" style={{width: "58px", height: "58px", margin: "0 20px", position:'fixed', zIndex: '1'}} />
+        <img src= {LogoRat} alt = "Logo" style={{width: "58px", height: "58px", margin: "-18px 8px", position:'fixed', zIndex: '1'}} />
       </Link>
 
       <Stack 
@@ -29,6 +30,7 @@ const Navbar = () => {
       position= 'fixed'
       zIndex= '1'
       ml= '90px'
+      
       
       
       
@@ -45,7 +47,7 @@ const Navbar = () => {
       </Stack>
       { user &&(
         <div style={{position: 'absolute', right: '50px'}}>
-        <span style={{fontSize: '20px'}}> <strong> {user.email}</strong>  </span>
+        <span style={{fontSize: '20px'}}> <EmailOutlinedIcon sx={{position: 'relative', top: '5px'}} /> <strong> {user.email}</strong>  </span>
           <button style={{
               background: '#fff',
               color: '#FF2625',

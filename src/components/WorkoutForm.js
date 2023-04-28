@@ -2,11 +2,13 @@ import { dividerClasses } from '@mui/material'
 import React from 'react'
 import { useState } from 'react'
 import {useWorkoutsContext} from '../hooks/useWorkoutsContext' 
+import { useAuthContext } from '../hooks/useAuthContext'
 
 // global context state
 
 const WorkoutForm = () => {
     const {dispatch} = useWorkoutsContext()
+    const {user} = useAuthContext()
 
     const [title, setTitle] = useState("")
     const [load, setLoad] = useState("")
@@ -18,6 +20,12 @@ const WorkoutForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        // for auth
+        if(!user){
+            setError('You must be loged in')
+            return
+        }
+
         const workout = {title, load, reps}
 
         // fetch request
@@ -26,7 +34,8 @@ const WorkoutForm = () => {
             // it changes workout to a json string and send it as the body
             body: JSON.stringify(workout),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             }
         })
 
