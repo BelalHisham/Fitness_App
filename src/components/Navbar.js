@@ -37,6 +37,8 @@ const Navbar = () => {
       >
         <Link to = "/" style={{textDecoration: "none", color: "#3A1212", borderBottom: "3px solid #FF2625"}}>Home</Link>
         <a href='#exercises' style={{textDecoration: "none", color: "#3A1212"}}>Exercises</a>
+        <Link to = "/bmi-calc" style={{textDecoration: "none", color: "#3A1212"}}>BMI calculator</Link>
+
        {!user && (
         <div>
           <Link to= '/login' style={{textDecoration: "none", color: "#3A1212", marginRight: '40px'}} >Login</Link>

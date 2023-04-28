@@ -10,6 +10,7 @@ import "./App.css";
 import Login from './pages/Login';
 import Signup from './pages/Signup'
 import { useAuthContext } from './hooks/useAuthContext';
+import BmiCalculator from './pages/BmiCalculator'
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             <Route path= "/add_workout" element = {user ? <AddWorkout /> : <Navigate to="/login" /> } />
             <Route path= "/login" element = {!user ? <Login /> : <Navigate to = "/add_workout" />} />
             <Route path= "/signup" element = {!user ? <Signup /> : <Navigate to = "/add_workout" />} />
+            <Route path= "/bmi-calc" element = {<BmiCalculator />} />
        
         </Routes>
         
