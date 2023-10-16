@@ -7,6 +7,14 @@ const userRoutes = require('./routes/user')
 //express app
 const app = express();
 
+app.use(cors(
+    {
+        origin: ["https:// deploy"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+
 // middleware 
 app.use(express.json()) // To send a json file when we are adding or updating a workout
 
