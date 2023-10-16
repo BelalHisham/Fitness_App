@@ -11,7 +11,7 @@ export const useSignup = () => {
         setIsLoading(true)
         setError(null) // everytime we make sign up request
 
-        const response = await fetch('/api/user/signup', {
+        const response = await fetch('https://fitness-app-five-olive.vercel.app/api/user/signup', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email, password})
