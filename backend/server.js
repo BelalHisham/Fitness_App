@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin: ["https:// deploy"],
+        origin: ["https://fitness-app-five-olive.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true
     }
