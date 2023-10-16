@@ -24,8 +24,8 @@ app.use( (req, res, next) => {
 })
 
 // routs (Get all the routes writen in workouts.js file and use it here in the app) after firing a request to /api/workouts 
-app.use('/api/workouts', workoutRoutes)
-app.use('/api/user', userRoutes)
+app.use('https://fitness-app-five-olive.vercel.app/api/workouts', workoutRoutes)
+app.use('https://fitness-app-five-olive.vercel.app/api/user', userRoutes)
 
 // connect to DB
 mongoose.connect(process.env.MONGO_URI)
